@@ -15,6 +15,9 @@ TAG_COLORS = {
     "css": "#a65628", "react": "#fdae61", "angular": "#66c2a5", 
     "flutter": "#d73027"
 }
+@app.route('/')
+def serve_homepage():
+    return send_from_directory('static', 'data.html')
 
 @app.route('/data', methods=['GET'])
 def get_json_data():
