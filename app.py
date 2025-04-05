@@ -7,7 +7,8 @@ app = Flask(__name__, static_folder="static")
 CORS(app)
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # Get the base directory
-CSV_FILE = os.path.join(BASE_DIR, "data", "stackoverflow_questions_2022-2025.csv")
+CSV_FILE = os.path.join(BASE_DIR, "stackoverflow_questions_2022-2025.csv")
+
 
 # 🔥 Print the CSV file path to check where it's looking for the file
 print(f"Looking for CSV file at: {CSV_FILE}")
