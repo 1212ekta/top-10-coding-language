@@ -6,7 +6,19 @@ import os
 app = Flask(__name__, static_folder="static")
 CORS(app)
 
-CSV_FILE = r"C:\Users\ektas\OneDrive\Desktop\Sem-2 MFC\Panda\campusx\flask\dhp_assign1\stackoverflow_questions_2022-2025.csv"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # Get the base directory
+CSV_FILE = os.path.join(BASE_DIR, "data", "stackoverflow_questions_2022-2025.csv")
+
+# 🔥 Print the CSV file path to check where it's looking for the file
+print(f"Looking for CSV file at: {CSV_FILE}")
+
+# 🔥 Check if the file exists
+if not os.path.exists(CSV_FILE):
+    print("❌ CSV file not found!")
+else:
+    print("✅ CSV file found!")
+
+
 
 # 🎨 Fixed colors for tags
 TAG_COLORS = {
